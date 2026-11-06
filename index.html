@@ -1,75 +1,48 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electrical Unit Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-body {
-    font-family: Arial, sans-serif;
-    background: #eaf2f8;
-    margin: 0;
-    padding: 20px;
-}
+    <link rel="stylesheet" href="/style.css">
+</head>
 
-.container {
-    background: white;
-    max-width: 450px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px #b8c5d1;
-}
+<body>
 
-h1 {
-    color: #1565c0;
-    text-align: center;
-    font-size: 26px;
-}
+<div class="container">
 
-p {
-    text-align: center;
-    color: #555;
-}
+    <h1>Electrical Unit Converter</h1>
 
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
+    <p>Convert electrical units easily</p>
 
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 7px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    font-size: 15px;
-}
+    <label>Category</label>
 
-button {
-    width: 100%;
-    padding: 13px;
-    margin-top: 22px;
-    background: #1565c0;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
+    <select id="category">
+        <option value="Voltage">Voltage</option>
+        <option value="Current">Current</option>
+        <option value="Power">Power</option>
+        <option value="Energy">Energy</option>
+    </select>
 
-button:hover {
-    background: #0d47a1;
-}
+    <label>Enter Value</label>
 
-#result {
-    text-align: center;
-    color: #168044;
-    margin-top: 25px;
-    overflow-wrap: anywhere;
-}
+    <input type="number" id="value" placeholder="Enter value">
 
-@media (max-width: 500px) {
-    .container {
-        margin: 15px auto;
-        padding: 20px;
-    }
-}
+    <label>From Unit</label>
+
+    <select id="from_unit"></select>
+
+    <label>To Unit</label>
+
+    <select id="to_unit"></select>
+
+    <button onclick="convert()">Convert</button>
+
+    <h3 id="result"></h3>
+
+</div>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
